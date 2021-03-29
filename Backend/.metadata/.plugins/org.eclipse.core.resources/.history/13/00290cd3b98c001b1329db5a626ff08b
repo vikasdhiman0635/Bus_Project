@@ -1,0 +1,12 @@
+server.port=8761
+
+eureka.client.registerWithEureka= false
+eureka.client.fetchRegistry= false
+
+#server.address=loaclhost
+
+eureka.client.healthcheck.enabled= true
+
+zuul.routes.all.url=http://localhost:8090
+
+eureka.client.serviceUrl.defaultZone= http://localhost:8761/eureka/

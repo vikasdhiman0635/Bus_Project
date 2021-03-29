@@ -1,0 +1,83 @@
+<ngx-spinner bdColor = "rgba(0,0,0,0.4)" size = "medium" color = "#fff" type = "ball-atom" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<app-bus-nav-bar></app-bus-nav-bar>
+<div class="container" *ngIf="!busstatus">
+    <div class="row">
+        <div class="col-md-12">
+            <img src="../../../../../assets/message/haveanybus.png" class="nobus" alt="">
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<router-outlet></router-outlet>
+<div class="container" *ngIf="busstatus">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th>
+                        Bus Number
+                    </th>
+                    <th>
+                        Start From
+                    </th>
+                    <th>
+                        Stop To
+                    </th>
+                    <th>
+                        How many stop/checkpoint
+                    </th>
+                    <th>
+                        Bus issued
+                    </th>
+                    <th>
+                        Bus Status
+                    </th>
+                    <th>
+                        How many seats
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+                <tr *ngFor="let bus of busdata?.bus">
+                    <td>
+                        {{bus.busnumber}}
+                    </td>
+                    <td>
+                        {{bus.bustravelFrom}}
+                    </td>
+                    <td>
+                        {{bus.bustravelTo}}
+                    </td>
+                    <td>
+                        {{bus.buscheckpoints}}
+                    </td>
+                    <td>
+                        {{bus.busissue}}
+                    </td>
+                    <td>
+                        <!-- {{bus.busstatus}} -->
+                        <p *ngIf="bus.busstatus==true">
+                            Active
+                        </p>
+                        <p *ngIf="bus.busstatus==false">
+                            Deactive
+                        </p>
+                    </td>
+                    <td>
+                        {{bus.howmanyseat}}
+                    </td>
+                    <td>
+                        <button type="button" (click)="getbusdaa(bus,bus.id)" class="bttttn">
+                            <img src="../../../../../assets/icons/drop.png" class="text-center">
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

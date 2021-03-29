@@ -1,0 +1,72 @@
+<ngx-spinner bdColor = "rgba(0,0,0,0.4)" size = "medium" color = "#fff" type = "ball-atom" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<app-nav-bar></app-nav-bar>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<img class="wave1" src="../../../../assets/waves/Vector1.png" alt="">
+<div class="container" *ngIf="check">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-6">
+            <img src="{{image}}" alt="image" class="img">
+        </div>
+        <div class="col-md-5 col-sm-6 col-sx-6">
+            <h2>{{getdata.firstname}} {{getdata.lastname}}</h2>
+            <p>
+                {{getdata.description}}
+            </p>
+            <p>
+                <strong>Email id:-</strong> {{getdata.email}}
+            </p>
+            <p *ngIf="getdata.whoareyou!='User'">
+                {{getdata.whoareyou}}
+            </p>
+            <p>
+                <strong>Location:-</strong> {{getdata.location}}
+            </p>
+            <p>
+                <strong>Normality:-</strong> {{getdata.normality}}
+            </p>
+            <p>
+                <strong>User Id:-</strong> {{getdata.userid}}
+            </p>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <br>
+            <br>
+            <input type="button" *ngIf="getdata.whoareyou!='User'" (click)="addbus()" class="btnn" value="Add Bus"/>
+            <br>
+            <br>
+            <input type="button" (click)="editprofile()" class="btnn" value="Edit Profile"/>
+        </div>
+    </div>
+    <br>
+    <button type="button" (click)="addaddress()" class="beeee float-right">+ Address</button>
+    <div class="row" *ngIf="addressdata!=''">
+        <div class="col-md-12">
+            <h2>
+                Address
+            </h2>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6" *ngFor="let data of addressdata">
+            <p>
+                {{data.addresstabledesc}}<br>
+                {{data.addresstablestreet}}, {{data.addresstablecity}}, {{data.addresstablestate}}
+            </p>
+            <button type="button" class="btttt float-right" (click)="deleteaddress(data.addresstableid)">
+                ❌
+            </button>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
+<br>
+<br>
+<br>
+<br>

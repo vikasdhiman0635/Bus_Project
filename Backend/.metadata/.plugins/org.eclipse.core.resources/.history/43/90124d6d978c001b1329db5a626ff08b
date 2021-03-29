@@ -1,0 +1,23 @@
+package com.example.user.Service;
+
+import org.springframework.http.ResponseEntity;
+
+
+public interface Userservices {
+
+	public ResponseEntity<?> saveuser(registerDTO register);
+
+	public ResponseEntity<?> login(loginDTTO login);
+
+	public ResponseEntity<?> regsocial(regsocialDTO refsocial);
+
+	public ResponseEntity<?> soclogin(loginsocial login);
+
+    boolean verifyuser(forgetpasswordstepfirstDTO stepfirst);
+
+	public ResponseEntity<?> forgetpassworddata(generatenewpasswordDTO newpassword);
+
+    public User getdatabyid(String email);
+
+	public ResponseEntity<?> updateuser(User user);
+}

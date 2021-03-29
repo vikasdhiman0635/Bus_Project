@@ -1,0 +1,20 @@
+package com.example.user.Service;
+
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+
+import com.example.demo.DTO.addressDTO;
+import com.example.demo.Model.Address;
+
+public interface AddressService {
+
+	ResponseEntity<?> addaddress(List<Address> address);
+
+	ResponseEntity<?> updateaddress(addressDTO address);
+
+	ResponseEntity<?> getdatabyidaddress(String useraddressid);
+
+	ResponseEntity<?> deleteidaddress(Long addresstableid);
+
+}

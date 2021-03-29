@@ -1,0 +1,14 @@
+package com.example.user.Response;
+
+import com.example.demo.Model.BusData;
+import com.example.demo.Response.disablebusResponse;
+
+import lombok.Data;
+
+@Data
+public class disablebusResponse 
+{
+	public String message;
+	
+	public BusData bus;
+}

@@ -1,0 +1,55 @@
+<app-nav-bar></app-nav-bar>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>
+                Booking History
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <h4 style="color: green;">
+                <b>Happy journey</b>
+            </h4>
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-md-6" *ngFor="let data of bookinghistpry; let i=index">
+            <u><p>{{i+1}}</p></u>
+            <p>
+                <strong>Bus Id: </strong> {{data.busid}}
+            </p>
+            <p>
+                <strong>Booking Id: </strong> {{data.userbusbookingid}}
+            </p>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Aadhar number</th>
+                        </tr>
+                        <tr *ngFor="let list of data.busseatnolist">
+                            <td>{{list.busseatname}}</td>
+                            <td>{{list.busseatage}}</td>
+                            <td>{{list.busseataddharno}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center" style="color: green;">
+                    <strong>Payment Status: </strong>{{data?.buspaymentstatus.paymentstatus}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Bus Service</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-align-justify"></i></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" style="cursor: pointer;"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item" style="cursor: pointer;"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
+                <li class="nav-item" style="cursor: pointer;"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                <li class="nav-item" style="cursor: pointer;"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
+                <li class="nav-item" style="cursor: pointer;"><a class="nav-link js-scroll-trigger" (click)="nav('contact')">Contact</a></li>
+                <li class="nav-item" style="cursor: pointer;" *ngIf="userdata==null"><a class="nav-link" (click)="nav('login')">Login</a></li>
+                <li class="nav-item dropdown" style="cursor: pointer; width: 150px;" *ngIf="userdata!=null">
+                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown">
+                        <img src="{{userdata.avatar}}" alt="profile_pic" width="26%" style="border-radius: 50%;"/>
+                        &nbsp;
+                        {{userdata.firstname}}
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" (click)="gotoprofile()">Profile</a>
+                        <a class="dropdown-item" (click)="setting()">Setting</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" (click)="bookinghistory()">Booking History</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" (click)="logout()">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

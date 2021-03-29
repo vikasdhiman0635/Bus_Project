@@ -1,0 +1,193 @@
+<div class="row">
+    <div class="col-md-12">
+        <app-bookbus-navbar></app-bookbus-navbar>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="container" *ngIf="busdata!=null">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>
+                Book Bus 
+            </h2>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <h4>
+                <u>Bus Details</u>
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <p style="font-size: 18px;">
+                <strong>
+                    Bus Number: {{busdata.busnumber}}
+                </strong>
+            </p>
+            <br>
+            <p style="font-size: 18px;">
+                <strong>
+                    Bus Start From:
+                </strong>
+                {{busdata.bustravelFrom}}
+                <span class="pull-right">
+                    <strong>
+                        Bus End To: 
+                    </strong>
+                    {{busdata.bustravelTo}}
+                </span>
+            </p>
+            <p style="font-size: 18px;">
+                <strong>
+                    Bus Start Time:
+                </strong>
+                {{busdata.startingtime}}
+                <span class="pull-right">
+                    <strong>
+                        Bus End Time: 
+                    </strong>
+                    {{busdata.stoptime}}
+                </span>
+            </p>
+            <p style="font-size: 18px;">
+                <strong>
+                    Bus Issue:
+                </strong>
+                {{busdata.busissue}}
+                <span class="pull-right">
+                    <strong>
+                        Bus FastTag: 
+                    </strong>
+                    {{busdata.busfastTag}}
+                </span>
+            </p>
+            <p style="font-size: 18px;">
+                <strong>
+                    Available Seat:
+                </strong>
+                {{seats.empty}}
+            </p>
+            <br>
+            
+            
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>
+                        Running in a week
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label *ngFor="let data of busdata?.weeks">
+                        <span *ngIf="data.monday==true">
+                            <input type="checkbox" disabled id="mon" checked/>
+                            <label for="mon">Monday</label>
+                        </span>
+                        <br>
+                        <span *ngIf="data.tuesday==true">
+                            <input type="checkbox" disabled checked/>
+                            <label for="mon">Tuesday</label>
+                        </span>
+                        <br>
+                        <span *ngIf="data.wednesday==true">
+                            <input type="checkbox" disabled checked/>
+                            <label for="mon">Wednesday</label>
+                        </span>
+                        <br>
+                        <span *ngIf="data.thuesday==true">
+                            <input type="checkbox" disabled checked/>
+                            <label for="mon">Thursday</label>
+                        </span>
+                        <br>
+                        <span *ngIf="data.friday==true">
+                            <input type="checkbox" disabled checked/>
+                            <label for="mon">Friday</label>
+                        </span>
+                        <br>
+                        <span *ngIf="data.saturday==true">
+                            <input type="checkbox" disabled checked/>
+                            <label for="mon">Saturday</label>
+                        </span>
+                        <br>
+                        <span *ngIf="data.sunday==true">
+                            <input type="checkbox" disabled checked/>
+                            <label for="mon">Sunday</label>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>
+                        Book Seat
+                    </h3>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <form [formGroup]="nestedForm">
+                        <div class="row" formArrayName="busseatnolist">
+                            <div class="col-6" *ngFor="let group of busseatnolist.controls; let i = index;" [formGroupName]="i">
+                              <div class="row">
+                                <div class="col-12">
+                                  <div class="row">
+                                    <div class="col-8">
+                                      <h4>Passenger {{i+1}}</h4>
+                                    </div>
+                                    <div class="col-4 control-buttons">
+                                      <img src="/assets/icons/add.svg" alt="" (click)="addAddress1()">
+                                      <img src="/assets/icons/remove.svg" alt="" width="24" height="24" (click)="removeAddress1(i)">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12">
+                                  <div class="form-group">
+                                    <label for="addText">Enter Name:</label>
+                                    <input type="text" formControlName="busseatname" class="form-control" placeholder="Enter Name">
+                                  </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                      <label for="addText">Enter Age:</label>
+                                      <input type="number" formControlName="busseatage" class="form-control" placeholder="Enter Age">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                      <label for="addText">Enter Addhar No:</label>
+                                      <input type="number" formControlName="busseataddharno" class="form-control" placeholder="Enter Addhar No.">
+                                    </div>
+                                </div>
+                              </div>
+                              <br>
+                            </div>
+                          </div>
+                          <br>
+                          <div class="div">
+                              <div class="col-md-12 text-right">
+                                  <input type="submit" [disabled]="!nestedForm.valid" (click)="submit(nestedForm)" class="btn btn-primary" value="Book Bus"/>
+                              </div>
+                          </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>

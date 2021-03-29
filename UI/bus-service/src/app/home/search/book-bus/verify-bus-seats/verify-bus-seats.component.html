@@ -1,0 +1,56 @@
+<app-bookbus-navbar></app-bookbus-navbar>
+<br>
+<br>
+<br>
+<br>
+<div class="container" *ngIf="origbusdata!=null">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Verify Bill</h2>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <strong>Bus Number: </strong> {{origbusdata.busnumber}}
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Name </th>
+                    <th>Age </th>
+                    <th>User Id </th>
+                    <th>Aadhar Number </th>
+                </tr>
+                <tr *ngFor="let data of busData?.busseatnolist">
+                    <td>{{data.busseatname}}</td>
+                    <td>{{data.busseatage}}</td>
+                    <td>{{data.userid}}</td>
+                    <td>{{data.busseataddharno}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                <strong>Total no. of seats: </strong>{{busData.totalnoofseats}}
+            </p>
+            <p>
+                <strong>Amount: </strong>{{busData?.buspaymentstatus.howmuchmoney}} <i class="fa fa-inr"></i>
+            </p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col md-12">
+            <input type="button" class="btn btn-primary float-right" (click)="payment()" value="Payment"/>
+        </div>
+    </div>
+</div>

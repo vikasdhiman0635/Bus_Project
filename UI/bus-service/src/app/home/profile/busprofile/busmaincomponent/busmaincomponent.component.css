@@ -1,0 +1,17 @@
+.nobus
+{
+    width: 100%;
+    margin-top: 25%;
+}
+.bttttn
+{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.checkss
+{
+    border-radius: 50px;
+    border: 2px solid black;
+    padding: 25px;
+}

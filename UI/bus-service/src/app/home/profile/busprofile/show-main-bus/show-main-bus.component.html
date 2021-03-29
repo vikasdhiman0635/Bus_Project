@@ -1,0 +1,66 @@
+<ngx-spinner bdColor = "rgba(0,0,0,0.4)" size = "medium" color = "#fff" type = "ball-atom" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<div class="container" *ngIf="bus!=null">
+    <div class="row" class="checkss">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    Bus No. :- {{bus.busnumber}}
+                    <br>
+                    Bus Status:- {{bus.busstatus}}
+                    <br>
+                    Bus Check Points:- {{bus.buscheckpoints}}
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    From:- {{bus.bustravelFrom}}
+                    <br>
+                    To:- {{bus.bustravelTo}}
+                    <br>
+                    Bus Type:- {{bus.bustype}}
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    From Time:- {{bus.startingtime}}
+                    <br>
+                    To Time:- {{bus.stoptime}}
+                </div>
+                <div class="col-md-3 col-sm-6" *ngIf="seats!=null">
+                    How many seats:- {{bus.howmanyseat}}
+                    <br>
+                    Book Seats:- {{seats.available}}
+                    <br>
+                    Empty Seats:- {{seats.empty}}
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>
+                        <u>
+                            Some Operations
+                        </u>
+                    </h3>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-2">
+                            <input type="button" value="Update" (click)="update(bus.id)" class="btn btn-success" />
+                        </div>
+                        <div class="col-md-2">
+                            <input type="button" value="Delete" (click)="updatestatus(bus.id)" class="btn btn-danger" />
+                        </div>
+                        <div class="col-md-2" *ngIf="bus.busstatus==true">
+                            <input type="button" value="Disable" (click)="disable(bus)" class="btn btn-danger" />
+                        </div>
+                        <div class="col-md-2" *ngIf="bus.busstatus==false">
+                            <input type="button" value="Active" (click)="active(bus)" class="btn btn-danger" />
+                        </div>
+                        <div class="col-md-2">
+                            <input type="button" (click)="addcheckpoints()" value="Add check Points" class="btn btn-info" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>

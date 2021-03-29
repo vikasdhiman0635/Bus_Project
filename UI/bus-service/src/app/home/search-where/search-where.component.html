@@ -1,0 +1,10 @@
+<ngx-spinner bdColor = "rgba(0,0,0,0.4)" size = "medium" color = "#fff" type = "ball-atom" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<span>
+    <input class="balloon" id="galaxy" type="text" [(ngModel)]="from" (change)="formset()" placeholder="From"/><label for="galaxy">From :</label>
+</span>
+<span>
+    <input class="balloon" id="galaxy" type="text" [(ngModel)]="to" (change)="toset()" placeholder="To" /><label for="galaxy">To :</label>
+</span>
+<span>
+    <input class="balloon" id="galaxy" type="date" [(ngModel)]="date" (change)="dateset()" [min]="minDate" placeholder="mm/dd/yyyy"/><label for="galaxy">Date :</label>
+</span>

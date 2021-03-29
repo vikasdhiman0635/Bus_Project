@@ -1,0 +1,15 @@
+package com.example.user.Response;
+
+import com.example.demo.Model.BusData;
+import com.example.demo.Response.BusbyidResponse;
+
+import lombok.Data;
+
+@Data
+public class BusbyidResponse
+{
+    public String message;
+
+    public BusData bus;
+
+}

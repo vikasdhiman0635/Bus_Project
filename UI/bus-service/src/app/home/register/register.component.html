@@ -1,0 +1,81 @@
+<ngx-spinner bdColor = "rgba(0,0,0,0.4)" size = "medium" color = "#fff" type = "ball-atom" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<div class="container-fluid">
+    <div class="row mh-100vh">
+        <div class="col-lg-6 d-flex align-items-end" id="bg-block" style="background-image:url(&quot;assets/img/aldain-austria-316143-unsplash.jpg&quot;);background-size:cover;background-position:center center;">
+            <p class="ml-auto small text-dark mb-2"><a class="text-dark" href="https://unsplash.com/photos/v0zVmWULYTg?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank"></a><br></p>
+        </div>
+        <div class="col-10 col-sm-8 col-md-6 col-lg-6 offset-1 offset-sm-2 offset-md-3 offset-lg-0 align-self-center d-lg-flex align-items-lg-center align-self-lg-stretch bg-white p-5 rounded rounded-lg-0 my-5 my-lg-0" id="login-block">
+            <div class="m-auto w-lg-75 w-xl-50">
+                <h2 class="text-info font-weight-light mb-5"><i class="fa fa-diamond"></i>&nbsp;Bus Service</h2>
+                <form [formGroup]="registerForm" (ngSubmit)="register()">
+                    <div class="group">
+                        <input type="text" formControlName="firstname" name="txtname"/>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>First Name 
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div *ngIf="registerForm.get('firstname').invalid && registerForm.get('firstname').touched">
+                            <small class="text-danger" *ngIf="registerForm.get('firstname').errors?.required">First Name is required</small>
+                        </div>
+                    </div>
+                    <div class="group">      
+                        <input type="text" name="txtUnm" formControlName="lastname"/>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Last Name
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div *ngIf="registerForm.get('lastname').invalid && registerForm.get('lastname').touched">
+                            <small class="text-danger" *ngIf="registerForm.get('lastname').errors?.required">Last Name is required</small>
+                        </div>
+                    </div>
+                    <div class="group">      
+                        <input type="text" formControlName="email" name="txtEmail"/>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Email
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched">
+                            <small class="text-danger" *ngIf="registerForm.get('email').errors?.required">Email is required</small>
+                        </div>
+                    </div>
+                    <div class="group">      
+                        <input type="password" formControlName="newpassword" name="txtCity"/>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Password
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div *ngIf="registerForm.get('newpassword').invalid && registerForm.get('newpassword').touched">
+                            <small class="text-danger" *ngIf="registerForm.get('newpassword').errors?.required">Password is required</small>
+                            <small class="text-danger" *ngIf="registerForm.get('newpassword').errors?.minlength">Password must be 5 character</small>
+                            <small class="text-danger" *ngIf="registerForm.get('newpassword').errors?.maxlength">Password minimum 15 character</small>
+                        </div>
+                    </div>
+                    <div class="group">      
+                        <input type="password" formControlName="confirmpassword" name="txtCity"/>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Confirm Password
+                            <span class="text-danger">*</span>
+                        </label>
+                        <small class="text-danger" *ngIf="registerForm.errors?.mismatch">Password is not match</small>
+                    </div>
+                    <div class="text-center">
+                        <button [disabled]="registerForm.invalid" class="btn btn-info mt-2" type="submit">Sign Up</button>
+                    </div>
+                </form>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <button style="border-radius: 20px; height: 40px; " class="btn btn-danger btn-social-icon btn-google mx-1" (click)="signInWithGoogle()"><i class="fa fa-google"></i></button>
+                        <button style="border-radius: 20px; height: 40px;" class="btn btn-primary btn-social-icon btn-facebook mx-1" (click)="signInWithFB()"><i class="fa fa-facebook"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

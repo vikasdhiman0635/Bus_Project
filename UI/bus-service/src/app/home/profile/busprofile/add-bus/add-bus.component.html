@@ -1,0 +1,406 @@
+<ngx-spinner bdColor = "rgba(0,0,0,0.4)" size = "medium" color = "#fff" type = "ball-atom" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<br>
+<br>
+<form [formGroup]="addbus" (ngSubmit)="submitdata()">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>
+                    Add Bus
+                </h2>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>
+                    <u>Bus Details</u>
+                </h3>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="form-group">
+                            <label for="">Bus Number</label>
+                            <input type="text" (change)="checknumber()" class="form-control" formControlName="busnumber"
+                                [ngClass]="{
+                        'is-invalid': addbus.controls.busnumber.invalid && addbus.controls.busnumber.touched,
+                        'is-valid': addbus.controls.busnumber.valid}" placeholder="Enter Bus Number">
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="form-group">
+                            <label for="">Bus Type</label>
+                            <select class="form-control" formControlName="bustype" [ngClass]="{
+                        'is-invalid': addbus.controls.bustype.invalid && addbus.controls.bustype.touched,
+                        'is-valid': addbus.controls.bustype.valid}">
+                                <option value="Private">
+                                    Private
+                                </option>
+                                <option value="Gorvement">
+                                    Gorvement
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="form-group">
+                            <label for="">Bus Start From</label>
+                            <input type="text" class="form-control" formControlName="bustravelFrom" [ngClass]="{
+                        'is-invalid': addbus.controls.bustravelFrom.invalid && addbus.controls.bustravelFrom.touched,
+                        'is-valid': addbus.controls.bustravelFrom.valid}" placeholder="Enter Bus Start From">
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="form-group">
+                            <label for="">Bus End To</label>
+                            <input type="text" class="form-control" formControlName="bustravelTo" [ngClass]="{
+                        'is-invalid': addbus.controls.bustravelTo.invalid && addbus.controls.bustravelTo.touched,
+                        'is-valid': addbus.controls.bustravelTo.valid}" placeholder="Enter Bus End To">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="form-group">
+                            <label for="">Bus Seats</label>
+                            <input type="number" class="form-control" formControlName="howmanyseat" [ngClass]="{
+                        'is-invalid': addbus.controls.howmanyseat.invalid && addbus.controls.howmanyseat.touched,
+                        'is-valid': addbus.controls.howmanyseat.valid}" placeholder="Enter Bus seats">
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="form-group">
+                            <label for="">Bus Starting Time</label>
+                            <input type="time" class="form-control" formControlName="startingtime" [ngClass]="{
+                            'is-invalid': addbus.controls.startingtime.invalid && addbus.controls.startingtime.touched,
+                            'is-valid': addbus.controls.startingtime.valid}" placeholder="Enter Bus Starting Timing">
+                        </div>
+                    </div>
+    
+                    <div class="col-md-3 col-sm-6">
+                        <div class="form-group">
+                            <label for="">Bus Ending Time</label>
+                            <input type="time" class="form-control" formControlName="stoptime" [ngClass]="{
+                            'is-invalid': addbus.controls.stoptime.invalid && addbus.controls.stoptime.touched,
+                            'is-valid': addbus.controls.stoptime.valid}" placeholder="Enter Bus Ending Timing">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="form-group">
+                            <label for="">Bus Issue</label>
+                            <select class="form-control" formControlName="busissue" [ngClass]="{
+                        'is-invalid': addbus.controls.busissue.invalid && addbus.controls.busissue.touched,
+                        'is-valid': addbus.controls.busissue.valid}">
+                                <option value="Gorvement">
+                                    Gorvement
+                                </option>
+                                <option value="other">
+                                    other
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="form-group">
+                            <label for="">Have any fastag</label>
+                            <select class="form-control" formControlName="busfastTag" [ngClass]="{
+                        'is-invalid': addbus.controls.busfastTag.invalid && addbus.controls.busfastTag.touched,
+                        'is-valid': addbus.controls.busfastTag.valid}">
+                                <option value="Yes">
+                                    Yes
+                                </option>
+                                <option value="No">
+                                    No
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="form-group">
+                            <label for="">Bus AC</label>
+                            <select class="form-control" formControlName="busac" [ngClass]="{
+                        'is-invalid': addbus.controls.busac.invalid && addbus.controls.busac.touched,
+                        'is-valid': addbus.controls.busac.valid}">
+                                <option value="Yes">
+                                    Yes
+                                </option>
+                                <option value="No">
+                                    No
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="form-group">
+                            <label for="">Bus Status</label>
+                            <select class="form-control" formControlName="busstatus" [ngClass]="{
+                        'is-invalid': addbus.controls.busstatus.invalid && addbus.controls.busstatus.touched,
+                        'is-valid': addbus.controls.busstatus.valid}">
+                                <option value="true">
+                                    Active
+                                </option>
+                                <option value="false">
+                                    Deactive
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>
+                    How many days are working
+                </h3>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row" formArrayName="weeks">
+                    <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12"
+                        *ngFor="let group of weaks.controls; let i = index;" [formGroupName]="i">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="checkbox" class="cehcss" id="sun" formControlName="sunday"/>
+                                <label for="sun" class="sts">Sun</label>
+
+                                <input type="checkbox" id="mon" class="cehcss" formControlName="monday"/>
+                                <label for="mon" class="sts">Mon</label>
+
+                                <input type="checkbox" id="tus" class="cehcss" formControlName="tuesday"/>
+                                <label for="tus" class="sts">Tus</label>
+
+                                <input type="checkbox" id="wed" class="cehcss" formControlName="wednesday"/>
+                                <label for="wed" class="sts">Wed</label>
+
+                                <input type="checkbox" id="thu" class="cehcss" formControlName="thuesday"/>
+                                <label for="thu" class="sts">Thu</label>
+
+                                <input type="checkbox" id="fri" class="cehcss" formControlName="friday"/>
+                                <label for="fri" class="sts">Fri</label>
+
+                                <input type="checkbox" id="sat" class="cehcss" formControlName="saturday"/>
+                                <label for="sat" class="sts">Sat</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>
+                    <u>
+                        Driver Details
+                    </u>
+                </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="form-group">
+                            <label for="">First Name</label>
+                            <input type="text" class="form-control" formControlName="driverfirstname"
+                                placeholder="Enter First Name" [ngClass]="{
+                        'is-invalid': addbus.controls.driverfirstname.invalid && addbus.controls.driverfirstname.touched,
+                        'is-valid': addbus.controls.driverfirstname.valid}">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="form-group">
+                            <label for="">Last Name</label>
+                            <input type="text" class="form-control" formControlName="driverlastname" [ngClass]="{
+                        'is-invalid': addbus.controls.driverlastname.invalid && addbus.controls.driverlastname.touched,
+                        'is-valid': addbus.controls.driverlastname.valid}" placeholder="Enter Last Name">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="form-group">
+                            <label for="">Issue</label>
+                            <select class="form-control" formControlName="driverissue" [ngClass]="{
+                        'is-invalid': addbus.controls.driverissue.invalid && addbus.controls.driverissue.touched,
+                        'is-valid': addbus.controls.driverissue.valid}">
+                                <option value="Gorvement">
+                                    Gorvement
+                                </option>
+                                <option value="other">
+                                    other
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="form-group">
+                            <label for="">Licance</label>
+                            <select class="form-control" formControlName="driverlicance" [ngClass]="{
+                        'is-invalid': addbus.controls.driverlicance.invalid && addbus.controls.driverlicance.touched,
+                        'is-valid': addbus.controls.driverlicance.valid}">
+                                <option value="Yes">
+                                    Yes
+                                </option>
+                                <option value="No">
+                                    No
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="form-group">
+                            <label for="">Identity Name</label>
+                            <select class="form-control" formControlName="driveridentityname" [ngClass]="{
+                        'is-invalid': addbus.controls.driveridentityname.invalid && addbus.controls.driveridentityname.touched,
+                        'is-valid': addbus.controls.driveridentityname.valid}">
+                                <option value="Addhar_Card">
+                                    Addhar Card
+                                </option>
+                                <option value="Pan_card">
+                                    Pan card
+                                </option>
+                                <option value="Voter_id">
+                                    Voter_id
+                                </option>
+                                <option value="Licance">
+                                    Licance
+                                </option>
+                                <option value="Passport">
+                                    Passport
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="form-group">
+                            <label for="">Identity Nunmber</label>
+                            <input type="text" formControlName="driverideantitynumber" class="form-control"
+                                placeholder="Enter Identity Number" [ngClass]="{
+                        'is-invalid': addbus.controls.driverideantitynumber.invalid && addbus.controls.driverideantitynumber.touched,
+                        'is-valid': addbus.controls.driverideantitynumber.valid}">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>
+                    <u>
+                        TT Details
+                    </u>
+                </h3>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="form-group">
+                        <label for="">First Name</label>
+                        <input type="text" class="form-control" formControlName="ttfirstname"
+                            placeholder="Enter First Name" [ngClass]="{
+                    'is-invalid': addbus.controls.ttfirstname.invalid && addbus.controls.ttfirstname.touched,
+                    'is-valid': addbus.controls.ttfirstname.valid}">
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="form-group">
+                        <label for="">Last Name</label>
+                        <input type="text" class="form-control" formControlName="ttlastname" [ngClass]="{
+                    'is-invalid': addbus.controls.ttlastname.invalid && addbus.controls.ttlastname.touched,
+                    'is-valid': addbus.controls.ttlastname.valid}" placeholder="Enter Last Name">
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="form-group">
+                        <label for="">Issue</label>
+                        <select class="form-control" formControlName="ttissue" [ngClass]="{
+                    'is-invalid': addbus.controls.ttissue.invalid && addbus.controls.ttissue.touched,
+                    'is-valid': addbus.controls.ttissue.valid}">
+                            <option value="Gorvement">
+                                Gorvement
+                            </option>
+                            <option value="other">
+                                other
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="form-group">
+                        <label for="">Identity Name</label>
+                        <select class="form-control" formControlName="ttidentitysname" [ngClass]="{
+                    'is-invalid': addbus.controls.ttidentitysname.invalid && addbus.controls.ttidentitysname.touched,
+                    'is-valid': addbus.controls.ttidentitysname.valid}">
+                            <option value="Addhar_Card">
+                                Addhar Card
+                            </option>
+                            <option value="Pan_card">
+                                Pan card
+                            </option>
+                            <option value="Voter_id">
+                                Voter_id
+                            </option>
+                            <option value="Licance">
+                                Licance
+                            </option>
+                            <option value="Passport">
+                                Passport
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="form-group">
+                        <label for="">Identity Nunmber</label>
+                        <input type="text" class="form-control" formControlName="ttideantitynumber" [ngClass]="{
+                    'is-invalid': addbus.controls.ttideantitynumber.invalid && addbus.controls.ttideantitynumber.touched,
+                    'is-valid': addbus.controls.ttideantitynumber.valid}" placeholder="Enter Identity Number">
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <input type="submit" class="btn btn-primary float-right" value="Add Bus">
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</form>

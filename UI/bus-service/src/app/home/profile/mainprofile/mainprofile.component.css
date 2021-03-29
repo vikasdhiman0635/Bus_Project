@@ -1,0 +1,69 @@
+*
+{
+    font: Roboto;
+}
+
+.img
+{
+    width: 100%;
+    border-radius: 1350px;
+}
+
+.btnn
+{
+    background-color: #00F0FF;
+    border-radius: 50px;
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-size: large;
+}
+.btttt
+{
+    border: none;
+    outline: none;
+    background-color: white;
+}
+.helpbtn
+{
+    position: absolute;
+    height: 40px;
+    border: none;
+    outline: none;
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: #FF0000;
+    border-radius: 50px;
+    margin-left: 50px;
+}
+.beeee
+{
+    height: 40px;
+    border: none;
+    outline: none;
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: #FF0000;
+    border-radius: 50px;
+}
+.wave1
+{
+    position: absolute;
+    width: 540.86px;
+    height: 280.13px;
+    left: -90px;
+    top: 450.83px;
+    transform: rotate(-18.08deg);
+}
+
+@media only screen and (max-width: 600px) {
+    .wave1 
+    {
+        display: none;
+    }
+}

@@ -1,0 +1,69 @@
+<app-resultnavbar></app-resultnavbar>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>
+                Order Placed
+            </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <strong>
+                Thank you for your order :)
+            </strong>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <h4>
+                <strong>User Id: </strong> {{orderdata.userid}}
+            </h4>
+            <p>
+                <strong>Bus No.: </strong>{{origbusdata.busnumber}}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Name </th>
+                    <th>Age </th>
+                    <th>User Id </th>
+                    <th>Aadhar Number </th>
+                </tr>
+                <tr *ngFor="let data of orderdata?.busseatnolist">
+                    <td>{{data.busseatname}}</td>
+                    <td>{{data.busseatage}}</td>
+                    <td>{{data.userid}}</td>
+                    <td>{{data.busseataddharno}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>
+                Payment Status
+            </h3>
+            <br>
+            <br>
+            <p style="color: green; font-size: 20px;">
+                <strong>Payment Status: </strong>{{orderdata?.buspaymentstatus.paymentstatus}}
+            </p>
+            <br>
+            <p>
+                <strong>
+                    Payment Method:
+                </strong> UPI
+            </p>
+        </div>
+    </div>
+</div>

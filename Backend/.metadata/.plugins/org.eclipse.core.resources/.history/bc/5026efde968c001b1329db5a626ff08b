@@ -1,0 +1,16 @@
+package com.example.user.Response;
+
+import lombok.Data;
+
+@Data
+public class loginResponse 
+{
+	public String message;
+	
+	public String userid;
+	
+	public String email;
+	
+	public User user;
+	
+}

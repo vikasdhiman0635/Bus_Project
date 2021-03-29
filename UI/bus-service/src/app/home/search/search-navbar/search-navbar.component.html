@@ -1,0 +1,21 @@
+<nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav" style="box-shadow: 0 0 10px #000; background-color: white;">
+    <div class="container"><a class="navbar-brand" style="color: black;" href="#page-top">Bus Service</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-align-justify"></i></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" style="cursor: pointer;"><a class="nav-link" style="color: black;" href="#">Home</a></li>
+                <li class="nav-item" style="cursor: pointer;"><a class="nav-link" style="color: black;" href="#services">Services</a></li>
+                <li class="nav-item" style="cursor: pointer;"><a class="nav-link" style="color: black;" href="#about">About</a></li>
+                <li class="nav-item" style="cursor: pointer;"><a class="nav-link" style="color: black;" href="#team">Add to Cart</a></li>
+                <li class="nav-item" style="cursor: pointer;"><a class="nav-link" style="color: black;" (click)="nav('contact')">Contact</a></li>
+                <li class="nav-item" style="cursor: pointer;" *ngIf="userdata==null"><a class="nav-link" style="color: black;" (click)="nav('login')">Login</a></li>
+                <li class="nav-item" style="cursor: pointer; width: 150px;" *ngIf="userdata!=null">
+                    <a class="nav-link" (click)="gotoprofile()" style="color: black;">
+                        <img src="{{userdata.avatar}}" alt="profile_pic" width="26%" style="border-radius: 50%;"/>
+                        &nbsp;
+                        {{userdata.firstname}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

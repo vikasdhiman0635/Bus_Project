@@ -1,0 +1,230 @@
+<ngx-spinner bdColor = "rgba(0,0,0,0.4)" size = "medium" color = "#fff" type = "ball-atom" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<app-nav-bar></app-nav-bar>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Wecome </h2>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <form #newUserForm="ngForm" [formGroup]="newUser">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img src="{{getdata?.avatar}}" width="200px" height="200px" />
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="form-Group">
+                    <label>User Id:-</label>
+                    <input type="text" class="form-control" disabled value="{{getdata?.id}}" formControlName="id"
+                        [(ngModel)]="newUser.value.id" />
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-Group">
+                    <label>First Name:-</label>
+                    <input type="text" class="form-control" value="{{getdata?.firstname}}"
+                        placeholder="Enter First Name" formControlName="firstname"
+                        [(ngModel)]="newUser.value.firstname" />
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="from-Group">
+                    <label>Last Name:-</label>
+                    <input type="text" class="form-control" value="{{getdata?.lastname}}" placeholder="Enter Last Name"
+                        formControlName="lastname" [(ngModel)]="newUser.value.lastname" />
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Email:-</label>
+                    <input type="text" placeholder="Enter Email" class="form-control" value="{{getdata?.email}}"
+                        disabled formControlName="email" [(ngModel)]="newUser.value.email" />
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Gender:-</label>
+                    <select class="form-control" value="{{getdata?.gender}}" formControlName="gender"
+                        [(ngModel)]="newUser.value.gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div *ngIf="newUser.get('gender').invalid && newUser.get('gender').touched">
+                        <small class="text-danger" *ngIf="newUser.get('gender').errors?.required">Gender is
+                            required</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Mobile No.:-</label>
+                    <input type="text" placeholder="Enter Mobile No." class="form-control" value="{{getdata?.mobileno}}"
+                        formControlName="mobileno" [(ngModel)]="newUser.value.mobileno" />
+                    <div *ngIf="newUser.get('mobileno').invalid && newUser.get('mobileno').touched">
+                        <small class="text-danger" *ngIf="newUser.get('mobileno').errors?.required">Mobile No. is
+                            required</small>
+                        <small class="text-danger" *ngIf="newUser.get('mobileno').errors?.minlength">At Least 8
+                            digits</small>
+                        <small class="text-danger" *ngIf="newUser.get('mobileno').errors?.maxlength">Maximum 10
+                            digits</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Description:-</label>
+                    <input type="text" placeholder="Enter Description" class="form-control"
+                        value="{{getdata?.description}}" formControlName="description"
+                        [(ngModel)]="newUser.value.description" />
+                    <div *ngIf="newUser.get('description').invalid && newUser.get('description').touched">
+                        <small class="text-danger" *ngIf="newUser.get('description').errors?.required">Description is
+                            required</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>You have any Bus:-</label>
+                    <select class="form-control" value="{{getdata?.whoareyou}}" formControlName="whoareyou"
+                        [(ngModel)]="newUser.value.whoareyou">
+                        <option value="User">No</option>
+                        <option value="Roadways_Bus_Driver">Roadways Bus</option>
+                        <option value="Private_Bus_Driver">Private Bus</option>
+                    </select>
+                    <div *ngIf="newUser.get('whoareyou').invalid && newUser.get('whoareyou').touched">
+                        <small class="text-danger" *ngIf="newUser.get('whoareyou').errors?.required">You have any bus is
+                            required</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Location:-</label>
+                    <input type="text" placeholder="Enter Material" class="form-control" value="{{getdata?.location}}"
+                        formControlName="location" [(ngModel)]="newUser.value.location" />
+                    <div *ngIf="newUser.get('location').invalid && newUser.get('location').touched">
+                        <small class="text-danger" *ngIf="newUser.get('location').errors?.required">Location is
+                            required</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Normality:-</label>
+                    <select formControlName="normality" class="form-control" value="{{getdata?.normality}}"
+                        formControlName="normality" [(ngModel)]="newUser.value.normality">
+                        <option value="Indian">Indian</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div *ngIf="newUser.get('normality').invalid && newUser.get('normality').touched">
+                        <small class="text-danger" *ngIf="newUser.get('normality').errors?.required">Normality is
+                            required</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="form-group">
+                    <label for="">Main Image : </label>
+                    <input type="file" (change)="fileupload($event)" accept="images" class="form-control">
+                    <br>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <!-- <div class="row" formArrayName="address">
+            <div class="col-6" *ngFor="let group of address.controls; let i = index;" [formGroupName]="i">
+              <div class="row">
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-8">
+                      <h4>Add New Address {{i+1}}</h4>
+                    </div>
+                    <div class="col-4 control-buttons">
+                      <img src="/assets/icons/add.svg" alt="" (click)="addAddress1()">
+                      <img src="/assets/icons/remove.svg" alt="" width="24" height="24" (click)="removeAddress1(i)">
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="addText">Enter Street :</label>
+                    <input type="text" formControlName="addresstablestreet" class="form-control" placeholder="Enter Street">
+                    <div *ngIf="group.get('addresstablestreet').invalid && group.get('addresstablestreet').touched">
+                        <small class="text-danger" *ngIf="group.get('addresstablestreet').errors?.required">Street is required</small>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="addText">Enter City :</label>
+                    <input type="text" formControlName="addresstablecity" class="form-control" placeholder="Enter City">
+                    <div *ngIf="group.get('addresstablecity').invalid && group.get('addresstablecity').touched">
+                        <small class="text-danger" *ngIf="group.get('addresstablecity').errors?.required">City is required</small>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="addText">Enter State :</label>
+                    <input type="text" formControlName="addresstablestate" class="form-control" placeholder="Enter State">
+                    <div *ngIf="group.get('addresstablestate').invalid && group.get('addresstablestate').touched">
+                        <small class="text-danger" *ngIf="group.get('addresstablestate').errors?.required">State is required</small>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="addText">Enter Location :</label>
+                    <input type="text" formControlName="addresstablelocation" class="form-control" placeholder="Enter Location">
+                    <div *ngIf="group.get('addresstablelocation').invalid && group.get('addresstablelocation').touched">
+                        <small class="text-danger" *ngIf="group.get('addresstablelocation').errors?.required">Location is required</small>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="addText">Enter Description:</label>
+                    <select formControlName="addresstabledesc" class="form-control">
+                        <option value="Home">Home</option>
+                        <option value="Office">Office</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div *ngIf="group.get('addresstabledesc').invalid && group.get('addresstabledesc').touched">
+                        <small class="text-danger" *ngIf="group.get('addresstabledesc').errors?.required">Description is required</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+        <div class="row">
+            <div class="col-md-12">
+                <br>
+                <br>
+                <input type="submit" class="btn btn-primary float-right" value="Update"
+                    (click)="savedata()" />
+            </div>
+        </div>
+    </form>
+</div>
+<br>
+<br>

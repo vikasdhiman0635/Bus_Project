@@ -1,0 +1,80 @@
+<ngx-spinner bdColor = "rgba(0,0,0,0.4)" size = "medium" color = "#fff" type = "ball-atom" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>
+                Verify Bus Stop
+            </h2>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>
+                Bus No.:- {{busdata.busnumber}}
+            </h3>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <h5>
+                Bus Travel From:- {{busdata.bustravelFrom}}
+            </h5>
+            <br>
+            <h6>
+                From Time:- {{busdata.startingtime}}
+            </h6>
+        </div>
+        <div class="col-md-6">
+            <h5>
+                Bus Travel To:- {{busdata.bustravelTo}}
+            </h5>
+            <br>
+            <h6>
+                To Time:- {{busdata.stoptime}}
+            </h6>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let data of busdata?.travel; let i = index;">
+            <h5>Stop {{i+1}}</h5>
+            <table>
+                <tr>
+                    <td>
+                        <strong>From:- </strong>{{data.travelbusfrom}}
+                    </td>
+                    <td>
+                        <strong>To:- </strong> {{data.travelbusto}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>From Time:- </strong>{{data.travelbusfromtime}}
+                    </td>
+                    <td>
+                        <strong>To Time:- </strong> {{data.travelbustotime}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <input type="button" class="btn btn-success" (click)="goback()" value="Add More Check Point">
+        </div>
+        <div class="col-md-6">
+            <input type="button" class="btn btn-primary float-right" (click)="verified()" value="Verified">
+        </div>
+    </div>
+</div>

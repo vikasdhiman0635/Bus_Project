@@ -1,0 +1,70 @@
+<ngx-spinner bdColor="rgba(0,0,0,0.7)" size="medium" color="#fff" type="ball-atom" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+<app-search-navbar></app-search-navbar>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 title">
+                <div class="row">
+                    <br>
+                    <br>
+                    <div class="col-md-6">
+                        <h2>Filter's</h2>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- <input type="reset" class="clearbtn float-right" value="clear all"> -->
+                        <!-- <button sty >clear all</button> -->
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="busnumber" placeholder="Enter Bus Number">
+                </div>
+                <!-- <div class="form-group">
+                    <input type="date" class="form-control" [(ngModel)]="busnumber" placeholder="Enter Date">
+                </div> -->
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="from" placeholder="From">
+                </div>
+                <div class="text-center">
+                    <img src="../../../../assets/icons/arrow.jpg" width="10px" alt="">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="to" placeholder="To">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="fromtime" placeholder="From Time">
+                </div>
+                <div class="text-center">
+                    <img src="../../../../assets/icons/arrow.jpg" width="10px" alt="">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="To Time" [(ngModel)]="totime">
+                </div>
+        </div>
+        <div class="col-md-8 contect">
+            <div class="row">
+                <div class="col-md-6 contacts"
+                    *ngFor="let data of allbuss | short : 'travelbusnumber' : busnumber | short : 'travelbusfrom' : from | short : 'travelbusto': to | short : 'travelbustotime' : totime | short : 'travelbusfromtime' : fromtime;">
+                    <h5><strong>Bus Number:- </strong>{{data.travelbusnumber}}</h5>
+                    <p style="font-size: 18px;">
+                        <strong>From: </strong>{{data.travelbusfrom}}
+                        <span class="pull-right"><strong>To: </strong>{{data.travelbusto}}</span>
+                        <br>
+                        <strong>From Time: </strong>{{data.travelbusfromtime}}
+                        <span class="pull-right"><strong>To Time: </strong>{{data.travelbustotime}}</span>
+                        <br>
+                        <strong>Prize: </strong>{{data.travelbusprize}} <i class="fa fa-inr"></i>
+                    </p>
+                    <input *ngIf="user!=null" type="submit" value="Book Now" (click)="bookbus(data)" class="btn btn-success float-right">
+                    <br>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

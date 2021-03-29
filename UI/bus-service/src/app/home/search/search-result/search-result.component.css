@@ -1,0 +1,41 @@
+
+.clearbtn
+{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    font-size: 18px;
+}
+
+.clearbtn:hover
+{
+    color: orange;
+}
+.title{
+    position: fixed;
+    top: 90px;
+    /* z-index: 1000; */
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: white;
+    /* border-radius: 25px; */
+    /* border: 1px solid black; */
+    box-shadow: 0 0 5px rgb(166, 84, 214)
+}
+.contect
+{
+    margin-left: 36%;
+    margin-top: 7%;
+}
+table
+{
+    border: none;
+}
+.contacts
+{
+    padding: 15px;
+    box-shadow: 0 0 5px rgb(166, 84, 214);
+}

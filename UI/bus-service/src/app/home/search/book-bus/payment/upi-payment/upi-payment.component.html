@@ -1,0 +1,42 @@
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Payment Page</h2>
+            <br>
+            <p>
+                Payment by upi. <strong>This is very safe payment method in India</strong>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <p style="font-size: 20px;">
+                <strong>Amount: </strong> {{alldata?.buspaymentstatus.howmuchmoney}} <i class="fa fa-inr"></i>
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <img src="../../../../../../assets/images/Banner15-1170x480.png" width="100%"/>
+                    <label>
+                        Enter UPI Id: 
+                    </label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" [(ngModel)]="upi" placeholder="Enter UPI Id">
+                    </div>
+                    <br>
+                    <br>
+                    <input type="button" class="btn btn-success float-right" (click)="pays()" value="Proceed"/>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+</div>
