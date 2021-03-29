@@ -1,0 +1,146 @@
+[
+  {
+    "id": "AN",
+    "state_name": "Andaman and Nicobar Islands"
+  },
+  {
+    "id": "AP",
+    "state_name": "Andhra Pradesh"
+  },
+  {
+    "id": "AR",
+    "state_name": "Arunachal Pradesh"
+  },
+  {
+    "id": "AS",
+    "state_name": "Assam"
+  },
+  {
+    "id": "BR",
+    "state_name": "Bihar"
+  },
+  {
+    "id": "CG",
+    "state_name": "Chandigarh"
+  },
+  {
+    "id": "CH",
+    "state_name": "Chhattisgarh"
+  },
+  {
+    "id": "DH",
+    "state_name": "Dadra and Nagar Haveli"
+  },
+  {
+    "id": "DD",
+    "state_name": "Daman and Diu"
+  },
+  {
+    "id": "DL",
+    "state_name": "Delhi"
+  },
+  {
+    "id": "GA",
+    "state_name": "Goa"
+  },
+  {
+    "id": "GJ",
+    "state_name": "Gujarat"
+  },
+  {
+    "id": "HR",
+    "state_name": "Haryana"
+  },
+  {
+    "id": "HP",
+    "state_name": "Himachal Pradesh"
+  },
+  {
+    "id": "JK",
+    "state_name": "Jammu and Kashmir"
+  },
+  {
+    "id": "JH",
+    "state_name": "Jharkhand"
+  },
+  {
+    "id": "KA",
+    "state_name": "Karnataka"
+  },
+  {
+    "id": "KL",
+    "state_name": "Kerala"
+  },
+  {
+    "id": "LD",
+    "state_name": "Lakshadweep"
+  },
+  {
+    "id": "MP",
+    "state_name": "Madhya Pradesh"
+  },
+  {
+    "id": "MH",
+    "state_name": "Maharashtra"
+  },
+  {
+    "id": "MN",
+    "state_name": "Manipur"
+  },
+  {
+    "id": "ML",
+    "state_name": "Meghalaya"
+  },
+  {
+    "id": "MZ",
+    "state_name": "Mizoram"
+  },
+  {
+    "id": "NL",
+    "state_name": "Nagaland"
+  },
+  {
+    "id": "OR",
+    "state_name": "Odisha"
+  },
+  {
+    "id": "PY",
+    "state_name": "Puducherry"
+  },
+  {
+    "id": "PB",
+    "state_name": "Punjab"
+  },
+  {
+    "id": "RJ",
+    "state_name": "Rajasthan"
+  },
+  {
+    "id": "SK",
+    "state_name": "Sikkim"
+  },
+  {
+    "id": "TN",
+    "state_name": "Tamil Nadu"
+  },
+  {
+    "id": "TS",
+    "state_name": "Telangana"
+  },
+  {
+    "id": "TR",
+    "state_name": "Tripura"
+  },
+  {
+    "id": "UK",
+    "state_name": "Uttar Pradesh"
+  },
+  {
+    "id": "UP",
+    "state_name": "Uttarakhand"
+  },
+  {
+    "id": "WB",
+    "state_name": "West Bengal"
+  }
+]
